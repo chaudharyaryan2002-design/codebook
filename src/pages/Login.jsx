@@ -25,8 +25,10 @@ export const Login = () => {
     }
 
     async function handleLoginGuest() {
-        email.current.value = "aryan@example.com";
-        password.current.value = "codebook";
+        const appName = import.meta.env.VITE_APP_NAME;
+        const apiKey = import.meta.env.VITE_API_KEY;
+        email.current.value = appName;
+        password.current.value = apiKey;
         try {
             const authDetail = {
                 email: email.current.value,
